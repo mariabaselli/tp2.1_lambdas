@@ -18,5 +18,6 @@ public class Main {
             System.out.println("abcd");
             return 10L;
         });
+
     }
 }
