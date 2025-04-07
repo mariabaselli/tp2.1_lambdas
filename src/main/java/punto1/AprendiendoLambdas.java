@@ -1,6 +1,7 @@
 package punto1;
 
 public class AprendiendoLambdas {
+
     public void unMetodo(A a) {
         a.metodo();
     }

@@ -4,13 +4,12 @@ public class Main {
     public static void main(String[] args) {
 
         AprendiendoLambdas a = new AprendiendoLambdas();
-        a.unMetodo((palabra) -> {
-            if (0 == palabra.length() % 2) {
-                return true;
-            }
-            return false;
+
+        a.unMetodo((palabra) -> 0 == palabra.length() % 2);
+
+        a.unMetodo((String otraPalabra) -> {
+            char variable = otraPalabra.charAt(0);
+            return Character.isLowerCase(variable);
         });
-
-
     }
 }
