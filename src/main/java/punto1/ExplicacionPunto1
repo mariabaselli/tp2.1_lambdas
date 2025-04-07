@@ -1,0 +1,39 @@
+Indique qué métodos de la clase AprendiendoLambdas se invocan en cada caso. Explique claramente porque.
+
+- En el método a.unMetodo((b) -> { System.out.println("abcd" + b);}); Se invoca al segundo método de la clase
+AprendiendoLambdas, ya que se está pasando como parámetro una implementación de la interfaz funcional B,
+utilizando una expresión lambda que recibe un String y no devuelve valor (void).
+
+Si hubiese sido una clase anónima la que se pasaba por parámetro, en lugar de un lambda, hubiese sido:
+
+a.unMetodo(new B() {
+            @Override
+            public void metodo(String b) {
+                System.out.println("abcd" + b);
+            }
+        });
+
+- En el método a.unMetodo(() → System.out.println("abcd")); se está implementando mediante un lambda el método de
+la interfaz funcional A que no tiene parámetros de entrada ni salida, por lo tanto se invoca al primer método de
+aprendiendo lambdas.
+
+Cómo clase anónima, en vez de lambda, sería:
+
+ a.unMetodo(new A () {
+
+            @Override
+            public void metodo() {
+                System.out.print("Lo que necesite imprimir");
+            }
+        });
+
+ - En el método a.unMetodo((variable) -> { System.out.println("abcd"); }); se está implementado el método de la interfaz
+ B, que recibe un parámetro y es de tipo void. Por lo tanto se invoca al segundo método de AprendiendoLambdas.
+
+ - En el método a.unMetodo((String variable) → {System.out.println("abcd"); return true;}); veo la implementacion de una
+ interfaz que recibe un String como parametro de entrada y retorna un booleano. Por ende es el método de la interfaz
+ C y se invoca al tercer método de Aprendiendo Lambdas.
+
+ - En el método a.unMetodo((Long variable) -> { System.out.println("abcd"); return 10L; }); con el lambda
+ se está implementando el método de una interfaz que recibe cómo parámetro una variable de tipo long y retorna una de tipo long.
+ Por ende se invoca al cuarto métotodo de AprendiendoLambas.
